@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import SideBar from "@/components/sideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +21,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <div className="min-w-screen min-h-screen flex">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
-    </html>
+    </html >
   );
 }

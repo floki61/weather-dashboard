@@ -67,3 +67,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.borderi {
+  @apply border-solid border-2 border-blue-700;
+}
+
+.borderi>* {
+  @apply border-dashed border-2 border-blue-300
+}
