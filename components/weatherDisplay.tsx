@@ -53,6 +53,20 @@ const WeatherDisplay: React.FC<Props> = ({ weatherData }) => {
                     <div className="text-lg mb-2">Snow (last 1h): {weatherData.snow['1h']} mm</div>
                 </div>
             )}
+            {weatherData.temperatures && (
+                <div className="mt-4">
+                    <div className="text-lg mb-2">Morning: {weatherData.temperatures.morning}°C</div>
+                    <div className="text-lg mb-2">Afternoon: {weatherData.temperatures.afternoon}°C</div>
+                    <div className="text-lg mb-2">Evening: {weatherData.temperatures.evening}°C</div>
+                    <div className="text-lg mb-2">Night: {weatherData.temperatures.night}°C</div>
+                </div>
+            )}
+            {weatherData.uvIndex && (
+                <div className="mt-4">
+                    <div className="text-lg mb-2">UV Index: {weatherData.uvIndex}</div>
+                </div>
+            )}
+
         </div>
     );
 };

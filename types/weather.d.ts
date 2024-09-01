@@ -1,19 +1,3 @@
-// export interface WeatherData {
-//     name: string;
-//     main: {
-//         temp: number;
-//         humidity: number;
-//     };
-//     weather: {
-//         description: string;
-//         icon: string;
-//     }[];
-//     wind: {
-//         speed: number;
-//     };
-// }
-
-
 export interface WeatherData {
     name: string;
     main: {
@@ -44,6 +28,22 @@ export interface WeatherData {
     snow?: {
         '1h': number;
     };
+    temperatures: {
+        morning: number | null;
+        afternoon: number | null;
+        evening: number | null;
+        night: number | null;
+    };
+    visibilityData: Array<{
+        time: string;
+        visibility: number;
+    }>;
+    uvIndex: number;
+    windData: Array<{
+        time: string;
+        speed: number;
+        direction: string;
+    }>;
 }
 
 export interface Data {
@@ -57,21 +57,20 @@ export interface Data {
     rainChance: number;
     uvIndex: number;
     forecast: {
-      morning: number;
-      afternoon: number;
-      evening: number;
-      night: number;
+        morning: number;
+        afternoon: number;
+        evening: number;
+        night: number;
     };
     hourlyForecast: Array<{
-      time: string;
-      temp: number;
-      icon: React.ReactNode;
+        time: string;
+        temp: number;
+        icon: React.ReactNode;
     }>;
     weekForecast: Array<{
-      day: string;
-      date: string;
-      temp: number;
-      icon: React.ReactNode;
+        day: string;
+        date: string;
+        temp: number;
+        icon: React.ReactNode;
     }>;
-  }
-  
+}
